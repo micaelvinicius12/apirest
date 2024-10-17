@@ -1,12 +1,10 @@
 {
     "dados": [
-        {
-          "dado": ""
-        },
+        
       ],
     "ligadesl": [
-        {
+        { 
           "ligado": false
-        },
+        }
       ]
     }
