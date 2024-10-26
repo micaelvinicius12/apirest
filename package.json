@@ -11,6 +11,7 @@
   "author": "Danilo Filitto",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "json-server": "^0.16.2"
   }
 }
