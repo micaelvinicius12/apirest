@@ -14,7 +14,7 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 server.use(function (req, res, next) {
-   console.log(req.body); 
+   console.log(String(req.body)); 
  // escreveDados();
   next();
 })
