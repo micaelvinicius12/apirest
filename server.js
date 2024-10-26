@@ -11,7 +11,7 @@ const port = process.env.PORT || 8080;
 server.use(middlewares);
 server.use(body_parser.json());
 server.use(function (req, res, next) {
-  console.log(req.body);
+  console.log("ola mundo");
   next();
 })
 
