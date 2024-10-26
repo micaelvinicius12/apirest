@@ -19,7 +19,6 @@ server.use(jsonServer.bodyParser);
 server.use(router);
 server.use(function (req, res, next) {
   escreveDados();
-  next();
 })
 
 
