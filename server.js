@@ -13,14 +13,14 @@ server.use(middlewares);
 //server.use('/api/v1', middlewares)
 server.use(jsonServer.bodyParser);
 
-
+server.use(function (req, res, next) {
+   console.log(req.headers); 
+ // escreveDados();
+  next();
+})
 
 //server.use('/api/v1', router)
 server.use(router);
-server.use(function (req, res, next) {
-  escreveDados();
-})
-
 
 server.listen(port, () => {
   // eslint-disable-next-line no-console
@@ -32,6 +32,13 @@ function escreveDados(){
   let dadosJoson = fs.readFileSync("./db.json",{encoding: "utf-8"});
   let dadosrecebidos = JSON.parse(dadosJoson);
   dados = dadosrecebidos;
-  console.log(dados);
- // fs.writeFileSync("./db.json",JSON.stringify(dados),{encoding: 'utf-8'});
+  const novoDado = [];
+ // novoDado["dados"] = []; 
+  for(let el of dados["dados"]){
+    if(el["id"] == 2){
+      console.log(novoDado);
+      fs.writeFileSync("./db.json",JSON.stringify(novoDado),{encoding: 'utf-8'});
+    }
+  }
+ 
   }
