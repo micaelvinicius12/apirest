@@ -7,6 +7,12 @@ const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 8080;
 
 server.use(middlewares);
+server.use(function (req, res, next) {
+  console.log('Time:', Date.now(),'ola brasil');
+  next();
+})
+
+
 //server.use('/api/v1', middlewares)
 server.use(jsonServer.bodyParser); //coloquei parar ver se mantém os dados
 //server.use('/api/v1', router)
