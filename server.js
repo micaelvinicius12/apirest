@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const jsonServer = require('json-server');
 const fs = require("fs");
+const { console } = require('inspector');
 let dados = [];
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
@@ -14,7 +15,8 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 server.use(function (req, res, next) {
-   console.log(JSON.parse(req.body)); 
+   let teste = req.body 
+   console.log(teste);
  // escreveDados();
   next();
 })
