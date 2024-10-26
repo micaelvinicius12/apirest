@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080;
 
 server.use(middlewares);
 server.use(function (req, res, next) {
-  console.log('Time:', Date.now(),'ola brasil');
+  console.log(req.body);
   next();
 })
 
