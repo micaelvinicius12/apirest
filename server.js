@@ -14,12 +14,14 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 
+
+//server.use('/api/v1', router)
+server.use(router);
 server.use(function (req, res, next) {
   escreveDados();
   next();
 })
-//server.use('/api/v1', router)
-server.use(router);
+
 
 server.listen(port, () => {
   // eslint-disable-next-line no-console
